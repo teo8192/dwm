@@ -1871,6 +1871,11 @@ tile(Monitor *m)
 	if (n == 0)
 		return;
 
+	if (n > 2 && m->nmaster == 1)
+		m->nmaster = 2;
+	else if (n == 2)
+		m->nmaster = 1;
+
 	if (n > m->nmaster)
 		mw = m->nmaster ? m->ww * m->mfact : 0;
 	else
