@@ -118,7 +118,7 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
-	{ ClkClientWin,			MODKEY,			Button1,		spawn,			{.v = plum_sel} },
+	{ ClkClientWin,			MODKEY,			Button2,		spawn,			{.v = plum_sel} },
 	{ ClkClientWin,			MODKEY,			Button3,		spawn,			{.v = kill_sel} },
 };
 
