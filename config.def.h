@@ -49,7 +49,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; //[> component of dmenucmd, manipulated in spawn() <]
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *plum_sel[] = { "plum", "prim", NULL };
+static const char *plum_sel[] = { "xplum", "prim", NULL };
 static const char *kill_sel[] = { "tabc.sh", "kill", NULL };
 
 static Key keys[] = {
@@ -79,7 +79,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	//{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	/* { MODKEY|ShiftMask,             XK_c,      killclient,     {0} }, */
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[2]} },
