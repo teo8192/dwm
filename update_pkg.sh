@@ -8,5 +8,8 @@ cp PKGBUILD ${build}
 cd ${build}
 
 makepkg
-cp dwm-git*.tar.gz ${repo}
-repo-add ${repo}/custom.db.tar.gz dwm-git*.tar.gz
+pkg=$(find dwm-git*.tar.zst)
+cp ${pkg} ${repo}
+repo-add ${repo}/custom.db.tar.gz  ${repo}/${pkg}
+cd -
+rm -rf ${build}
