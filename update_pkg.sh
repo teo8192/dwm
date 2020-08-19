@@ -10,6 +10,6 @@ cd ${build}
 makepkg
 pkg=$(find dwm-git*.tar.zst)
 cp ${pkg} ${repo}
-repo-add ${repo}/custom.db.tar.gz  ${repo}/${pkg}
+repo-add -R ${repo}/custom.db.tar.gz  ${repo}/${pkg}
 cd -
 rm -rf ${build}
