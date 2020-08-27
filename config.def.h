@@ -17,10 +17,34 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+static const char col1[]            = "#ffffff";
+static const char col2[]            = "#ffffff";
+static const char col3[]            = "#ffffff";
+static const char col4[]            = "#ffffff";
+static const char col5[]            = "#ffffff";
+static const char col6[]            = "#ffffff";
+static const char col7[]            = "#ffffff";
+static const char col8[]            = "#ffffff";
+static const char col9[]            = "#ffffff";
+static const char col10[]           = "#ffffff";
+static const char col11[]           = "#ffffff";
+static const char col12[]           = "#ffffff";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm]  = { col_gray3, col_gray1, col_gray2 },
+	[SchemeCol1]  = { col1,      col_gray1, col_gray2 },
+	[SchemeCol2]  = { col2,      col_gray1, col_gray2 },
+	[SchemeCol3]  = { col3,      col_gray1, col_gray2 },
+	[SchemeCol4]  = { col4,      col_gray1, col_gray2 },
+	[SchemeCol5]  = { col5,      col_gray1, col_gray2 },
+	[SchemeCol6]  = { col6,      col_gray1, col_gray2 },
+	[SchemeCol7]  = { col7,      col_gray1, col_gray2 },
+	[SchemeCol8]  = { col8,      col_gray1, col_gray2 },
+	[SchemeCol9]  = { col8,      col_gray1, col_gray2 },
+	[SchemeCol10] = { col10,     col_gray1, col_gray2 },
+	[SchemeCol11] = { col11,     col_gray1, col_gray2 },
+	[SchemeCol12] = { col12,     col_gray1, col_gray2 },
+	[SchemeSel]   = { col_gray4, col_cyan,  col_cyan  },
 };
 
 /* tagging */
@@ -112,15 +136,17 @@ static Key keys[] = {
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
-	/* click                event mask      button          function        argument */
+	/* click                event mask          button          function        argument */
 	{ ClkLtSymbol,          0,                  Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,                  Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,                  Button2,        zoom,           {0} },
-	/* { ClkStatusText,        0,                  Button2,        spawn,          {.v = termcmd } }, */
-	{ ClkClientWin,         Mod4Mask,			Button1,        movemouse,      {0} },
+	{ ClkStatusText,        0,                  Button1,        sigdsblocks,    {.i = 1} },
+	{ ClkStatusText,        0,                  Button2,        sigdsblocks,    {.i = 2} },
+	{ ClkStatusText,        0,                  Button3,        sigdsblocks,    {.i = 3} },
+	{ ClkClientWin,         Mod4Mask,           Button1,        movemouse,      {0} },
 	{ ClkClientWin,         Mod4Mask|ShiftMask, Button2,        togglefloating, {0} },
 	{ ClkClientWin,         Mod4Mask,           Button3,        resizemouse,    {0} },
-	{ ClkTagBar,            0,					Button1,        view,           {0} },
+	{ ClkTagBar,            0,                  Button1,        view,           {0} },
 	{ ClkTagBar,            0,                  Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,             Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,             Button3,        toggletag,      {0} },
